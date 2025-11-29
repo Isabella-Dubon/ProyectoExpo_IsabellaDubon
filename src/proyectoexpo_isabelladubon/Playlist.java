@@ -15,7 +15,7 @@ public class Playlist {
     private String descripcion;
     private Cancion[] canciones;
     private int cantCanciones;
-    private double duracionTotal;
+    private int duracionTotal;
 
     //Constructor
     public Playlist(String nombre, String creador, String descripcion) {
@@ -72,7 +72,7 @@ public class Playlist {
         return duracionTotal;
     }
 
-    public void setDuracionTotal(double duracionTotal) {
+    public void setDuracionTotal(int duracionTotal) {
         this.duracionTotal = duracionTotal;
     }
     
@@ -84,7 +84,7 @@ public class Playlist {
                 "Creador: " + creador + "\n" +
                 "Descripcion:" + "\n"+ descripcion + "\n" +
                 "Cantidad de Canciones: " + cantCanciones + "\n" +
-                "Duracion: " + duracionTotal + "mins";
+                "Duracion: " + duracionTotal + "s";
     }
     
     

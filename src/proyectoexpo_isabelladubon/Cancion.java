@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyectoexpo_isabelladubon;
-
+import java.util.Scanner;
 /**
  *
  * @author miria
@@ -13,12 +13,12 @@ public class Cancion {
     private String titulo;
     private String artista;
     private String album;
-    private double duracion;
+    private int duracion;
     private String genero;
     private boolean favorito;
     
     //Constructor
-    public Cancion(String titulo, String artista, String album, double duracion, String genero, boolean favorito) {
+    public Cancion(String titulo, String artista, String album, int duracion, String genero, boolean favorito) {
         this.titulo = titulo;
         this.artista = artista;
         this.album = album;
@@ -56,7 +56,7 @@ public class Cancion {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
@@ -82,24 +82,52 @@ public class Cancion {
         return titulo + "\n" +
                 "Artista: " + artista + "\n" +
                 "Album: " + album + "\n" +
-                "Duracion: " + duracion + "mins" + "\n" +
+                "Duracion: " + duracion + "s" + "\n" +
                 "Genero: " + genero + "\n" +
                 "Marcado como Favorito: " + favorito ;
         
     }
     
     public void reproducir (){
-        System.out.println("Reproduciendo:");
-        System.out.println(titulo);
-        System.out.println(artista + "," + album);
-        System.out.println("0:00 |----------------------| " + duracion);
-        if (favorito == true){
-            System.out.println("   <3     |<     ||     >|");
-        }
-        if (!favorito){
-            System.out.println("         |<     ||     >|");
-        }
+        int duracionRestante = duracion;
+        do{
+            System.out.println("Reproduciendo:");
+            System.out.println(titulo);
+            System.out.println(artista + "," + album);
+            System.out.println("0:00 |----------------------| " + duracionRestante);
+            if (favorito == true){
+                System.out.println("   <3     |<     ||     >|");
+            }
+            if (!favorito){
+                System.out.println("         |<     ||     >|");
+            }
+            duracionRestante--;
+        }while (duracionRestante >= 0);
     }
     
+    public void esFavorita (){
+        Scanner sc = new Scanner(System.in);
+        if (favorito == true){
+                System.out.println("Esta agregada a Favoritos.");
+            }
+            if (!favorito){
+                System.out.println("No esta agregada a Favoritos.");
+                System.out.println("Deseas agregarla? (0 = no, 1 = si): ");
+                int agregar;
+                do{
+                    agregar = sc.nextInt();
+                    switch (agregar){
+                        case 0:
+                            break;
+                        case 1:
+                            favorito = true;
+                            System.out.println("La cancion ha sido agregada a Favoritos.");
+                            break;
+                        default:
+                            System.out.println("Opcion no valida.");
+                    }
+                }while (agregar < 0 || agregar > 1);
+            }
+    }
     
 }
