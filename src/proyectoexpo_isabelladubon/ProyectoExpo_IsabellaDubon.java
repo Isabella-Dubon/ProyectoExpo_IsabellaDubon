@@ -10,7 +10,6 @@ import java.util.Scanner;
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         Cancion song1 = new Cancion("My Kind of Woman","Mac DeMarco","2",125,"Indie Pop",false);
-        song1.esFavorita();
     }
     
 }

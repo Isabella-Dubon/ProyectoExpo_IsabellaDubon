@@ -22,7 +22,7 @@ public class Playlist {
         this.nombre = nombre;
         this.creador = creador;
         this.descripcion = descripcion;
-        this.canciones = new Cancion[100];
+        this.canciones = new Cancion[10];
         this.cantCanciones = 0;
         this.duracionTotal = 0;
     }
@@ -87,5 +87,24 @@ public class Playlist {
                 "Duracion: " + duracionTotal + "s";
     }
     
+    public void agregarCancion (String titulo, String artista, String album, int duracion, String genero, boolean favorito){
+        Cancion nuevo = new Cancion(titulo,artista,album,duracion,genero,favorito);
+        boolean agregado = false; //valida que la cancion esta agregada
+        for (int i = 0; i < canciones.length; i++){
+            if (canciones[i] == null){ //busca un espacio nulo en el arreglo
+                canciones[i] = nuevo;
+                agregado = true;
+                System.out.println("La cancion se ha agregado a |"+ nombre +"|");
+                break;
+            }
+        }
+        if (!agregado){
+            System.out.println("La playlist está llena. No se puede agregar más canciones.");
+        }
+        System.out.println();
+    }
     
+    public void eliminarCancion (){
+        
+    }
 }
