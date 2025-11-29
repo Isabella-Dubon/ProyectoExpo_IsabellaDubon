@@ -9,6 +9,8 @@ import java.util.Scanner;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
+        Cancion song1 = new Cancion("My Kind of Woman","Mac DeMarco","2",0.35,"Indie Pop",true);
+        song1.reproducir();
     }
     
 }

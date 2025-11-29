@@ -88,5 +88,18 @@ public class Cancion {
         
     }
     
+    public void reproducir (){
+        System.out.println("Reproduciendo:");
+        System.out.println(titulo);
+        System.out.println(artista + "," + album);
+        System.out.println("0:00 |----------------------| " + duracion);
+        if (favorito == true){
+            System.out.println("   <3     |<     ||     >|");
+        }
+        if (!favorito){
+            System.out.println("         |<     ||     >|");
+        }
+    }
+    
     
 }
