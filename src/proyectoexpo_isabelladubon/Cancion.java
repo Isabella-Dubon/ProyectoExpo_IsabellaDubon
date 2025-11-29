@@ -9,5 +9,84 @@ package proyectoexpo_isabelladubon;
  * @author miria
  */
 public class Cancion {
+    //Atributos
+    private String titulo;
+    private String artista;
+    private String album;
+    private double duracion;
+    private String genero;
+    private boolean favorito;
+    
+    //Constructor
+    public Cancion(String titulo, String artista, String album, double duracion, String genero, boolean favorito) {
+        this.titulo = titulo;
+        this.artista = artista;
+        this.album = album;
+        this.duracion = duracion;
+        this.genero = genero;
+        this.favorito = favorito;
+    }
+
+    //Getters y Setters
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getArtista() {
+        return artista;
+    }
+
+    public void setArtista(String artista) {
+        this.artista = artista;
+    }
+
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    public double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public boolean isFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
+    }
+    
+    //Metodos
+    @Override
+    public String toString() {
+        return titulo + "\n" +
+                "Artista: " + artista + "\n" +
+                "Album: " + album + "\n" +
+                "Duracion: " + duracion + "mins" + "\n" +
+                "Genero: " + genero + "\n" +
+                "Marcado como Favorito: " + favorito ;
+        
+    }
+    
     
 }
