@@ -17,7 +17,7 @@ public class Playlist {
     private String descripcion;
     private Cancion[] canciones;
     private int cantCanciones;
-    private int duracionTotal;
+    private double duracionTotal;
 
     //Constructor
     public Playlist(String nombre, String creador, String descripcion) {
@@ -74,7 +74,7 @@ public class Playlist {
         return duracionTotal;
     }
 
-    public void setDuracionTotal(int duracionTotal) {
+    public void setDuracionTotal(double duracionTotal) {
         this.duracionTotal = duracionTotal;
     }
     
@@ -91,12 +91,12 @@ public class Playlist {
     public String toString() {
         return nombre + "\n" +
                 "Creador: " + creador + "\n" +
-                "Descripcion:" + "\n"+ descripcion + "\n" +
+                "Descripcion:" + "\n"+ descripcion + "\n" + "\n" +
                 "Cantidad de Canciones: " + cantCanciones + "\n" +
-                "Duracion: " + duracionTotal + "s";
+                "Duracion: " + duracionTotal + "mins";
     }
     
-    public void agregarCancion (String titulo, String artista, String album, int duracion, String genero, boolean favorito){
+    public void agregarCancion (String titulo, String artista, String album, double duracion, String genero, boolean favorito){
         Cancion nuevo = new Cancion(titulo,artista,album,duracion,genero,favorito);
         boolean agregado = false; //valida que la cancion esta agregada
         for (int i = 0; i < canciones.length; i++){
@@ -117,7 +117,7 @@ public class Playlist {
     
     public void eliminarCancion (int opcion){
         Scanner sc = new Scanner(System.in);
-        int duracionEliminar = canciones[opcion].getDuracion();
+        double duracionEliminar = canciones[opcion].getDuracion();
         System.out.println("Esta es la cancion que quieres eliminar?");
         System.out.println(canciones[opcion]);
             int eliminar;

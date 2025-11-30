@@ -13,12 +13,12 @@ public class Cancion {
     private String titulo;
     private String artista;
     private String album;
-    private int duracion;
+    private double duracion;
     private String genero;
     private boolean favorito;
     
     //Constructor
-    public Cancion(String titulo, String artista, String album, int duracion, String genero, boolean favorito) {
+    public Cancion(String titulo, String artista, String album, double duracion, String genero, boolean favorito) {
         this.titulo = titulo;
         this.artista = artista;
         this.album = album;
@@ -52,11 +52,11 @@ public class Cancion {
         this.album = album;
     }
 
-    public int getDuracion() {
+    public double getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(double duracion) {
         this.duracion = duracion;
     }
 
@@ -82,33 +82,30 @@ public class Cancion {
         return titulo + "\n" +
                 "Artista: " + artista + "\n" +
                 "Album: " + album + "\n" +
-                "Duracion: " + duracion + "s" + "\n" +
+                "Duracion: " + duracion + "mins" + "\n" +
                 "Genero: " + genero + "\n" +
                 "Marcado como Favorito: " + favorito ;
         
     }
     
     public void reproducir (){
-        int duracionRestante = duracion;
-        do{
-            System.out.println("Reproduciendo:");
-            System.out.println(titulo);
-            System.out.println(artista + "," + album);
-            System.out.println("0:00 |----------------------| " + duracionRestante);
-            if (favorito == true){
-                System.out.println("   <3     |<     ||     >|");
-            }
-            if (!favorito){
-                System.out.println("         |<     ||     >|");
-            }
-            duracionRestante--;
-        }while (duracionRestante >= 0);
+        System.out.println("Reproduciendo:");
+        System.out.println(titulo);
+        System.out.println(artista + "," + album);
+        System.out.println("0:00 |----------------------| " + duracion);
+        if (favorito == true){
+            System.out.println("   <3     |<     ||     >|");
+        }
+        if (!favorito){
+            System.out.println("         |<     ||     >|");
+        }
     }
     
     public void esFavorita (){
         Scanner sc = new Scanner(System.in);
         if (favorito == true){
                 System.out.println("Esta agregada a Favoritos.");
+                System.out.println();
             }
             if (!favorito){
                 System.out.println("No esta agregada a Favoritos.");
@@ -122,6 +119,7 @@ public class Cancion {
                         case 1:
                             favorito = true;
                             System.out.println("La cancion ha sido agregada a Favoritos.");
+                            System.out.println();
                             break;
                         default:
                             System.out.println("Opcion no valida. Ingrese su opcion:");
