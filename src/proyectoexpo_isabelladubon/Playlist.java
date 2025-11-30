@@ -78,6 +78,13 @@ public class Playlist {
         this.duracionTotal = duracionTotal;
     }
     
+    public Cancion getCancion (int index){
+        if (index >= 0 || index < canciones.length){
+            return canciones[index];
+        }
+        return null;
+    }
+    
     //Metodos
 
     @Override
@@ -98,7 +105,7 @@ public class Playlist {
                 agregado = true;
                 duracionTotal += duracion;
                 cantCanciones++;
-                System.out.println("La cancion se ha agregado a |"+ nombre +"|");
+                System.out.print("La cancion se ha agregado a |"+ nombre +"|");
                 break;
             }
         }
@@ -133,11 +140,11 @@ public class Playlist {
     
     public void listaCanciones (){
         for (int i = 0; i < canciones.length; i++){
-            System.out.println(i +") ");
+            System.out.print(i +") ");
             if (canciones[i] == null){
                 System.out.println("[vacio]");
             }else{
-                System.out.println(canciones[i]);
+                System.out.println(canciones[i].getTitulo());
             }
             System.out.println("---------------");
         }
