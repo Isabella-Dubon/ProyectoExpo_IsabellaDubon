@@ -41,7 +41,7 @@ import java.util.Scanner;
             
             switch (opcion){
                 case 1:
-                    playlist.listaCanciones();
+                    playlist.listaCanciones(); //muestra la lista de canciones
                     System.out.print("Elija una cancion (0-9): ");
                     int cancion;
                     do{
@@ -141,10 +141,10 @@ import java.util.Scanner;
                                 System.out.println("Opcion no valida.");
                         }
                         
-                    }while (cancion < 0 || cancion > 9);
+                    }while (cancion < 0 || cancion > 9); //validacion: numero 0-9
                     break;
                 case 2:
-                    System.out.println(playlist.toString());
+                    System.out.println(playlist.toString()); //muestra la informacion de la playlist
                     System.out.println();
                     break;
                 case 3:
@@ -268,7 +268,7 @@ import java.util.Scanner;
                                 System.out.println("Opcion no valida.");
                         }
                         
-                    }while (reproducir < 0 || reproducir > 9);
+                    }while (reproducir < 0 || reproducir > 9); //validacion: numero 0-9
                     break;
                 case 8:
                     System.out.print("Elija una cancion (0-9): ");
@@ -370,10 +370,10 @@ import java.util.Scanner;
                                 System.out.println("Opcion no valida.");
                         }
                         
-                    }while (favorita < 0 || favorita > 9);
+                    }while (favorita < 0 || favorita > 9); //validacion: numero 0-9
                     break;
                 case 9:
-                    sc.nextLine();
+                    sc.nextLine(); 
                     System.out.println("Ingrese el titulo:");
                     String titulo = sc.nextLine();
                     System.out.println("Ingrese el artista:");

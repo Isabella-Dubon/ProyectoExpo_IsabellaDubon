@@ -93,30 +93,31 @@ public class Cancion {
         System.out.println(titulo);
         System.out.println(artista + "," + album);
         System.out.println("0:00 |----------------------| " + duracion);
-        if (favorito == true){
+        if (favorito == true){ //si la cancion es favorita, imprime un corazon
             System.out.println("   <3     |<     ||     >|");
         }
-        if (!favorito){
+        if (!favorito){ //sino, solo imprime un espacio
             System.out.println("         |<     ||     >|");
         }
     }
     
     public void esFavorita (){
         Scanner sc = new Scanner(System.in);
-        if (favorito == true){
+        if (favorito == true){ //verifica si la cancion es favorita
                 System.out.println("Esta agregada a Favoritos.");
                 System.out.println();
             }
-            if (!favorito){
+            if (!favorito){ //sino, pregunta si desea agregarlo
                 System.out.println("No esta agregada a Favoritos.");
                 System.out.println("Deseas agregarla? (0 = no, 1 = si): ");
                 int agregar;
                 do{
                     agregar = sc.nextInt();
                     switch (agregar){
-                        case 0:
+                        case 0: //0 = cancelar
+                            System.out.println("Cancelado.");
                             break;
-                        case 1:
+                        case 1: //1 = agregar a favoritos
                             favorito = true;
                             System.out.println("La cancion ha sido agregada a Favoritos.");
                             System.out.println();
@@ -124,7 +125,7 @@ public class Cancion {
                         default:
                             System.out.println("Opcion no valida. Ingrese su opcion:");
                     }
-                }while (agregar < 0 || agregar > 1);
+                }while (agregar < 0 || agregar > 1); //valida que sea 0 o 1
             }
     }
     

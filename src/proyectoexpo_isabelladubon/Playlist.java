@@ -24,7 +24,7 @@ public class Playlist {
         this.nombre = nombre;
         this.creador = creador;
         this.descripcion = descripcion;
-        this.canciones = new Cancion[10];
+        this.canciones = new Cancion[10]; //arreglo con las canciones
         this.cantCanciones = 0;
         this.duracionTotal = 0;
     }
