@@ -373,6 +373,7 @@ import java.util.Scanner;
                     }while (favorita < 0 || favorita > 9);
                     break;
                 case 9:
+                    sc.nextLine();
                     System.out.println("Ingrese el titulo:");
                     String titulo = sc.nextLine();
                     System.out.println("Ingrese el artista:");
@@ -382,13 +383,19 @@ import java.util.Scanner;
                     System.out.println("Ingrese la duracion:");
                     double duracion = sc.nextDouble();
                     System.out.println("Ingrese el genero:");
+                    sc.nextLine();
                     String genero = sc.nextLine();
                     System.out.println("Agregar a favoritos? (true/false)");
                     boolean favorito = sc.nextBoolean();
                     playlist.agregarCancion(titulo, artista, album, duracion, genero, favorito);
                     break;
                 case 10:
-                    
+                    System.out.println("Elija una cancion para eliminar (0-9):");
+                    int eliminar;
+                    do{
+                        eliminar = sc.nextInt();
+                        playlist.eliminarCancion(eliminar);
+                    }while(eliminar < 0 || eliminar > 9);
                     break;
                 case 11:
                     break;

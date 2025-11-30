@@ -118,7 +118,7 @@ public class Playlist {
     public void eliminarCancion (int opcion){
         Scanner sc = new Scanner(System.in);
         double duracionEliminar = canciones[opcion].getDuracion();
-        System.out.println("Esta es la cancion que quieres eliminar?");
+        System.out.println("Esta es la cancion que quieres eliminar? (0 = no, 1 = si)");
         System.out.println(canciones[opcion]);
             int eliminar;
             do{
