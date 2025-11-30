@@ -52,7 +52,7 @@ public class Cancion {
         this.album = album;
     }
 
-    public double getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
@@ -124,7 +124,7 @@ public class Cancion {
                             System.out.println("La cancion ha sido agregada a Favoritos.");
                             break;
                         default:
-                            System.out.println("Opcion no valida.");
+                            System.out.println("Opcion no valida. Ingrese su opcion:");
                     }
                 }while (agregar < 0 || agregar > 1);
             }

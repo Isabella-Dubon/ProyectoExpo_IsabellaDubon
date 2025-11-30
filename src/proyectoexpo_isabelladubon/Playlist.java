@@ -4,6 +4,8 @@
  */
 package proyectoexpo_isabelladubon;
 
+import java.util.Scanner;
+
 /**
  *
  * @author miria
@@ -94,6 +96,8 @@ public class Playlist {
             if (canciones[i] == null){ //busca un espacio nulo en el arreglo
                 canciones[i] = nuevo;
                 agregado = true;
+                duracionTotal += duracion;
+                cantCanciones++;
                 System.out.println("La cancion se ha agregado a |"+ nombre +"|");
                 break;
             }
@@ -104,7 +108,38 @@ public class Playlist {
         System.out.println();
     }
     
-    public void eliminarCancion (){
-        
+    public void eliminarCancion (int opcion){
+        Scanner sc = new Scanner(System.in);
+        int duracionEliminar = canciones[opcion].getDuracion();
+        System.out.println("Esta es la cancion que quieres eliminar?");
+        System.out.println(canciones[opcion]);
+            int eliminar;
+            do{
+                eliminar = sc.nextInt();
+                switch (eliminar){
+                    case 0:
+                        break;
+                    case 1:
+                        canciones[opcion] = null;
+                        duracionTotal -= duracionEliminar;
+                        cantCanciones--;
+                        System.out.println("La cancion ha sido eliminada.");
+                        break;
+                    default:
+                        System.out.println("Opcion no valida. Ingrese su opcion:");
+                }
+            }while (eliminar < 0 || eliminar > 1);
+    }
+    
+    public void listaCanciones (){
+        for (int i = 0; i < canciones.length; i++){
+            System.out.println(i +") ");
+            if (canciones[i] == null){
+                System.out.println("[vacio]");
+            }else{
+                System.out.println(canciones[i]);
+            }
+            System.out.println("---------------");
+        }
     }
 }
